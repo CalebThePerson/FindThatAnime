@@ -2,8 +2,9 @@ import Foundation
 import RealmSwift
 import Alamofire
 import SwiftyJSON
+import SwiftUI
 
-class TraceMoeAPI: ObservableObject {
+class TraceMoeAPI: ObservableObject, showingAlert {
     
     var AniListapi = AniListAPI()
     var animeModel = AnimeInfoViewModel()
@@ -11,6 +12,7 @@ class TraceMoeAPI: ObservableObject {
     @Published var CirclePresenting:Bool = false
     @Published var Percetage:Int = 0
     @Published var DataIsSaved:Bool = false
+    @Published var showAlert:Bool = false
     
     func API(ImageString: String){
         CirclePresenting=true
@@ -19,6 +21,7 @@ class TraceMoeAPI: ObservableObject {
         let MyParameters = ["image":"\(ImageString)"]
         let Headers: HTTPHeaders = [.accept("application/json")]
         let kitsuHeaders: HTTPHeaders = [.accept("application/vnd.api+json")]
+        var usableTitle  = ""
         
         //Actually Making the request
         AF.request("https://trace.moe/api/search", method:.post, parameters: MyParameters, headers: Headers).responseJSON { [self] response in
@@ -30,13 +33,22 @@ class TraceMoeAPI: ObservableObject {
                 print("come on")
                 //Creates the JSON Files
                 let json = try! JSON(data: Data)
+                print(json["docs"][0])
                 
                 print("Almost there")
                 Percetage = 21
 
                 
                 //Creatinug our variables taht we want to save
-                guard let name = json["docs"][0]["title_english"].string else {return}
+                print("start")
+                if json["docs"][0]["title_english"].string == nil{
+                    usableTitle = "title"
+                } else{
+                    usableTitle = "title_english"
+                }
+                
+                guard let name = json["docs"][0][usableTitle].string else {return; self.showAlert = true}
+                print("Boom")
                 guard let episode = json["docs"][0]["episode"].int else {return}
                 Percetage = 28
                 guard let AnilistId = json["docs"][0]["anilist_id"].int else {return}
@@ -115,8 +127,6 @@ class TraceMoeAPI: ObservableObject {
             }
             
             //https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(filename)}?t=${at}&token=${tokenthumb}`
-            
-            
             
         }
     }

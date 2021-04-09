@@ -10,62 +10,62 @@ import RealmSwift
 //Bugs
 //WHenever you dismiss without selecting an image it uses teh last saved image??
 
+protocol showingAlert{
+    var showAlert:Bool {get set}
+}
+
 struct ContentView: View {
     
     @ObservedObject var API = TraceMoeAPI()
-    @State private var Anime: Results<AnimeInfo> = realm.objects(AnimeInfo.self)
     @StateObject var animeModel = AnimeInfoViewModel()
     
     @State var SelectedAnime: AnimeInfo?
-    
     @State private var DetailViewShowing: Bool = false
     
+    @State var showAlert:Bool = false
+    
     var body: some View {
-        if Anime.count != 0 {
-            GeometryReader { geometry in
-                ZStack{
-                    ScrollView(.vertical) {
-                        VStack(spacing:0) {
-                            ForEach(animeModel.theShows, id: \.Id){ anime in
-                                Button(action: {
-                                    self.SelectedAnime = anime
-                                    self.animeModel.selectedShow = anime
-                                    self.DetailViewShowing.toggle()
-                                }) {
-                                    ImageCell(ScreenSize: geometry.size, TheImage: convertBase64ToImage(anime.ImageString))
-                                    
-                                        
-                                    
-                                }.sheet(isPresented: self.$DetailViewShowing, onDismiss: {self.DetailViewShowing = false}){
-                                    DetailView(Anime: $SelectedAnime, animeModel: animeModel)
-
-                                }
-//                                }.onAppear(perform: {
-////                                    Testing(with: anime)
-//                                })
+        GeometryReader { geometry in
+            ZStack{
+                ScrollView(.vertical) {
+                    VStack(spacing:0) {
+                        ForEach(animeModel.theShows, id: \.Id){ anime in
+                            Button(action: {
+                                self.SelectedAnime = anime
+                                self.animeModel.selectedShow = anime
+                                self.DetailViewShowing.toggle()
+                            }) {
+                                ImageCell(ScreenSize: geometry.size, TheImage: convertBase64ToImage(anime.ImageString))
+                                
+                                
+                                
+                            }.sheet(isPresented: self.$DetailViewShowing, onDismiss: {if animeModel.deleting == true {animeModel.deleteShow()}}){
+                                DetailView(Anime: $SelectedAnime, animeModel: animeModel)
                             }
                             
                             
-                            if API.CirclePresenting == true{
-                                LoadingCircle(TheAPI: API)
-                                    .padding(.top)
-                            }
+                            
                         }
+                        
+                        if API.CirclePresenting == true{
+                            LoadingCircle(TheAPI: API)
+                                .padding(.top)
+                        }
+                        
                     }
-                    .lineSpacing(0)
-                    
-                    FloatingMenu(TraceAPI: API)
-                        .offset(x:150, y:-10)
+
                 }
+
+                .lineSpacing(0)
+                
+                FloatingMenu(TraceAPI: API)
+                    .offset(x:150, y:-10)
             }
-            .edgesIgnoringSafeArea(.all)
         }
-        
-        
-        else {
-            FloatingMenu(TraceAPI: API)
-                .offset(x:150, y:-10)
-        }
+        .alert(isPresented: $API.showAlert, content: {
+            Alert(title: Text("Sorry"), message: Text("We couldn't find the anime"), dismissButton: .cancel())
+        })
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

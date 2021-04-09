@@ -11,6 +11,9 @@ import URLImage
 struct DetailView: View {
     @Binding var Anime: AnimeInfo?
     var animeModel: AnimeInfoViewModel
+    @State var deleteAlert:Bool = false
+    @Environment(\.presentationMode) var presentationMode
+
     
     var body: some View {
         GeometryReader { geometry in
@@ -47,8 +50,11 @@ struct DetailView: View {
                             }
                         }
                         
-                        Imagesub(Screensize: geometry.size, DaImage: convertBase64ToImage(animeModel.imageString))
-                            .frame(alignment:.center)
+                        
+                        Image(uiImage: convertBase64ToImage(animeModel.imageString))
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .padding(.horizontal, 20)
                         
                         Spacer()
                         Text("Description")
@@ -67,6 +73,29 @@ struct DetailView: View {
                     Text("Likes: \(animeModel.popularity)")
                     
                 }
+                //Overlay for the delete button
+                .overlay(
+                    VStack{
+                        HStack{
+                            Button(action:{
+                                self.deleteAlert.toggle()
+                            }){
+                                Image(systemName: "trash.circle")
+                                    .resizable()
+                                    .foregroundColor(.red)
+                                    .frame(width: 25, height: 25)
+                            }
+                            .padding([.top,.leading], 20)
+                        }
+                    }, alignment: .topLeading)
+            }
+            
+            //Alert that shows the view and says we can delete it or not
+            .alert(isPresented: $deleteAlert){
+                Alert(title: Text("Would you like to delete this entery"), message: Text(animeModel.name), primaryButton: .default(Text("Delete")){
+                    animeModel.deleting = true
+                    presentationMode.wrappedValue.dismiss()
+                }, secondaryButton: .cancel())
             }
             .background(URLImage(url: URL(string:animeModel.pictureLink)!){ image in
                 image
@@ -77,6 +106,7 @@ struct DetailView: View {
             }.opacity(0.2)
             .ignoresSafeArea())
         }
+        
         
         
     }

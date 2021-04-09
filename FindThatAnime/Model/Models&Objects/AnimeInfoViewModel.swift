@@ -24,6 +24,7 @@ class AnimeInfoViewModel: ObservableObject{
     var realm: Realm?
     var token: NotificationToken? = nil
     
+    
     @ObservedResults(AnimeInfo.self) var theShows
     
     @Published var deleting:Bool = false

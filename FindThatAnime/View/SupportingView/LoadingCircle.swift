@@ -13,6 +13,7 @@ struct LoadingCircle: View {
     @State var Degrees = 0.0
     var TheAPI: TraceMoeAPI
     
+    
     var body: some View {
         ZStack {
             //Creating an inner, static circle
