@@ -1,0 +1,25 @@
+query Query($id: Int!) {
+  Media(id: $id) {
+    
+    startDate {
+      year
+      month
+      day
+    }
+    
+    endDate{
+      year
+      month
+      day
+    }
+    
+    description(asHtml: false)
+    
+    genres
+    
+    popularity
+    
+    siteUrl
+    
+  }
+}

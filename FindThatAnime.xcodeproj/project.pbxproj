@@ -1,0 +1,915 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		015109A4FA696FCD43E5C499 /* Pods_FindThatAnime_FindThatAnimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B275D9DB4F95C14CC0D4452 /* Pods_FindThatAnime_FindThatAnimeUITests.framework */; };
+		C32FDBCA2516DDD600244666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDBC92516DDD600244666 /* AppDelegate.swift */; };
+		C32FDBCC2516DDD600244666 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDBCB2516DDD600244666 /* SceneDelegate.swift */; };
+		C32FDBD02516DDD900244666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C32FDBCF2516DDD900244666 /* Assets.xcassets */; };
+		C32FDBD32516DDD900244666 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C32FDBD22516DDD900244666 /* Preview Assets.xcassets */; };
+		C32FDBD62516DDD900244666 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32FDBD42516DDD900244666 /* LaunchScreen.storyboard */; };
+		C32FDBE12516DDDA00244666 /* FindThatAnimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDBE02516DDDA00244666 /* FindThatAnimeTests.swift */; };
+		C32FDBEC2516DDDA00244666 /* FindThatAnimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDBEB2516DDDA00244666 /* FindThatAnimeUITests.swift */; };
+		C32FDC0B2516DE3100244666 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDC052516DE1800244666 /* ContentView.swift */; };
+		C32FDC1F2516DF1200244666 /* GraphQLQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = C32FDC1E2516DF1200244666 /* GraphQLQuery.graphql */; };
+		C32FDC252516DF2500244666 /* AnimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDC242516DF2500244666 /* AnimeInfo.swift */; };
+		C32FDC2A2516DF2600244666 /* SaveAndSuch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDC292516DF2600244666 /* SaveAndSuch.swift */; };
+		C32FDC302516DF3A00244666 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDC2F2516DF3A00244666 /* ImagePicker.swift */; };
+		C32FDC352516DF3D00244666 /* TraceMoeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDC342516DF3D00244666 /* TraceMoeAPI.swift */; };
+		C32FDC422516DFCF00244666 /* FloatingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDC062516DE1800244666 /* FloatingMenu.swift */; };
+		C32FDC462516DFD100244666 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDC072516DE1800244666 /* ImageCell.swift */; };
+		C32FDC522516E07700244666 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = C32FDC512516E07700244666 /* schema.json */; };
+		C360C80925314C1C00D967D0 /* TestingDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C360C80825314C1C00D967D0 /* TestingDetails.swift */; };
+		C362F671261F7EF500991850 /* AnimeInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C362F670261F7EF500991850 /* AnimeInfoViewModel.swift */; };
+		C373CB3B251D57A400E0819F /* TestingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373CB3A251D57A400E0819F /* TestingCell.swift */; };
+		C373CB40251D5B7D00E0819F /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373CB3F251D5B7D00E0819F /* TestingView.swift */; };
+		C373CB45251D942800E0819F /* LoadingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373CB44251D942700E0819F /* LoadingCircle.swift */; };
+		C373CB51251DA19100E0819F /* TestingWithList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373CB50251DA19100E0819F /* TestingWithList.swift */; };
+		C39A3D73251F27BA00522B71 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39A3D72251F27BA00522B71 /* API.swift */; };
+		C39A3D7B251FCDA000522B71 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39A3D7A251FCDA000522B71 /* DetailView.swift */; };
+		C3CF329E25394C22000C86B8 /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF329D25394C22000C86B8 /* GenreView.swift */; };
+		C3CF32A325394D74000C86B8 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF32A225394D73000C86B8 /* Genres.swift */; };
+		C3DFB9ED2533F69700EF1E20 /* Imagesub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFB9EC2533F69700EF1E20 /* Imagesub.swift */; };
+		C3DFB9F62533FDC700EF1E20 /* AniListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFB9F52533FDC700EF1E20 /* AniListAPI.swift */; };
+		E94050F69BCEB2DF227AFDE1 /* Pods_FindThatAnime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52B39C8989677C5A8CB7823 /* Pods_FindThatAnime.framework */; };
+		F6E0FEDBD8D543D661606E07 /* Pods_FindThatAnimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D14755FB531671CF8363FB8 /* Pods_FindThatAnimeTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C32FDBDD2516DDDA00244666 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C32FDBBE2516DDD600244666 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C32FDBC52516DDD600244666;
+			remoteInfo = FindThatAnime;
+		};
+		C32FDBE82516DDDA00244666 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C32FDBBE2516DDD600244666 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C32FDBC52516DDD600244666;
+			remoteInfo = FindThatAnime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		181DB4E64F0EC7DD2D1819B0 /* Pods-FindThatAnimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnimeTests.release.xcconfig"; path = "Target Support Files/Pods-FindThatAnimeTests/Pods-FindThatAnimeTests.release.xcconfig"; sourceTree = "<group>"; };
+		2D14755FB531671CF8363FB8 /* Pods_FindThatAnimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindThatAnimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38EC7EF7B659CCA5E1A5B110 /* Pods-FindThatAnime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnime.debug.xcconfig"; path = "Target Support Files/Pods-FindThatAnime/Pods-FindThatAnime.debug.xcconfig"; sourceTree = "<group>"; };
+		4CA9937447B61E3B266533B9 /* Pods-FindThatAnime-FindThatAnimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnime-FindThatAnimeUITests.release.xcconfig"; path = "Target Support Files/Pods-FindThatAnime-FindThatAnimeUITests/Pods-FindThatAnime-FindThatAnimeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		53BFEAC4C33F4D367FF65067 /* Pods-FindThatAnime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnime.release.xcconfig"; path = "Target Support Files/Pods-FindThatAnime/Pods-FindThatAnime.release.xcconfig"; sourceTree = "<group>"; };
+		7B275D9DB4F95C14CC0D4452 /* Pods_FindThatAnime_FindThatAnimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindThatAnime_FindThatAnimeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EBDC6002F8499B60F8D7CF1 /* Pods-FindThatAnimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnimeTests.debug.xcconfig"; path = "Target Support Files/Pods-FindThatAnimeTests/Pods-FindThatAnimeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		926AD31B61F0B0D662DFB2C3 /* Pods-FindThatAnime-FindThatAnimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnime-FindThatAnimeUITests.debug.xcconfig"; path = "Target Support Files/Pods-FindThatAnime-FindThatAnimeUITests/Pods-FindThatAnime-FindThatAnimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C32FDBC62516DDD600244666 /* FindThatAnime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindThatAnime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32FDBC92516DDD600244666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C32FDBCB2516DDD600244666 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C32FDBCF2516DDD900244666 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C32FDBD22516DDD900244666 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C32FDBD52516DDD900244666 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C32FDBD72516DDD900244666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C32FDBDC2516DDDA00244666 /* FindThatAnimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindThatAnimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32FDBE02516DDDA00244666 /* FindThatAnimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindThatAnimeTests.swift; sourceTree = "<group>"; };
+		C32FDBE22516DDDA00244666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C32FDBE72516DDDA00244666 /* FindThatAnimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindThatAnimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32FDBEB2516DDDA00244666 /* FindThatAnimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindThatAnimeUITests.swift; sourceTree = "<group>"; };
+		C32FDBED2516DDDA00244666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C32FDC052516DE1800244666 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C32FDC062516DE1800244666 /* FloatingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenu.swift; sourceTree = "<group>"; };
+		C32FDC072516DE1800244666 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		C32FDC1E2516DF1200244666 /* GraphQLQuery.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GraphQLQuery.graphql; sourceTree = "<group>"; };
+		C32FDC242516DF2500244666 /* AnimeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeInfo.swift; sourceTree = "<group>"; };
+		C32FDC292516DF2600244666 /* SaveAndSuch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAndSuch.swift; sourceTree = "<group>"; };
+		C32FDC2F2516DF3A00244666 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C32FDC342516DF3D00244666 /* TraceMoeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceMoeAPI.swift; sourceTree = "<group>"; };
+		C32FDC512516E07700244666 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		C360C80825314C1C00D967D0 /* TestingDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDetails.swift; sourceTree = "<group>"; };
+		C362F670261F7EF500991850 /* AnimeInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeInfoViewModel.swift; sourceTree = "<group>"; };
+		C373CB3A251D57A400E0819F /* TestingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingCell.swift; sourceTree = "<group>"; };
+		C373CB3F251D5B7D00E0819F /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
+		C373CB44251D942700E0819F /* LoadingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCircle.swift; sourceTree = "<group>"; };
+		C373CB50251DA19100E0819F /* TestingWithList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingWithList.swift; sourceTree = "<group>"; };
+		C39A3D72251F27BA00522B71 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		C39A3D7A251FCDA000522B71 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C3CF329D25394C22000C86B8 /* GenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreView.swift; sourceTree = "<group>"; };
+		C3CF32A225394D73000C86B8 /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
+		C3DFB9EC2533F69700EF1E20 /* Imagesub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagesub.swift; sourceTree = "<group>"; };
+		C3DFB9F52533FDC700EF1E20 /* AniListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniListAPI.swift; sourceTree = "<group>"; };
+		F52B39C8989677C5A8CB7823 /* Pods_FindThatAnime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindThatAnime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C32FDBC32516DDD600244666 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E94050F69BCEB2DF227AFDE1 /* Pods_FindThatAnime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32FDBD92516DDDA00244666 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6E0FEDBD8D543D661606E07 /* Pods_FindThatAnimeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32FDBE42516DDDA00244666 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				015109A4FA696FCD43E5C499 /* Pods_FindThatAnime_FindThatAnimeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		77EA4AB17F7B9B0BB5ADFF0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38EC7EF7B659CCA5E1A5B110 /* Pods-FindThatAnime.debug.xcconfig */,
+				53BFEAC4C33F4D367FF65067 /* Pods-FindThatAnime.release.xcconfig */,
+				926AD31B61F0B0D662DFB2C3 /* Pods-FindThatAnime-FindThatAnimeUITests.debug.xcconfig */,
+				4CA9937447B61E3B266533B9 /* Pods-FindThatAnime-FindThatAnimeUITests.release.xcconfig */,
+				8EBDC6002F8499B60F8D7CF1 /* Pods-FindThatAnimeTests.debug.xcconfig */,
+				181DB4E64F0EC7DD2D1819B0 /* Pods-FindThatAnimeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C32FDBBD2516DDD600244666 = {
+			isa = PBXGroup;
+			children = (
+				C32FDBC82516DDD600244666 /* FindThatAnime */,
+				C32FDBDF2516DDDA00244666 /* FindThatAnimeTests */,
+				C32FDBEA2516DDDA00244666 /* FindThatAnimeUITests */,
+				C32FDBC72516DDD600244666 /* Products */,
+				77EA4AB17F7B9B0BB5ADFF0D /* Pods */,
+				E1CECE9E5B56FF42DBCBFA51 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C32FDBC72516DDD600244666 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C32FDBC62516DDD600244666 /* FindThatAnime.app */,
+				C32FDBDC2516DDDA00244666 /* FindThatAnimeTests.xctest */,
+				C32FDBE72516DDDA00244666 /* FindThatAnimeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C32FDBC82516DDD600244666 /* FindThatAnime */ = {
+			isa = PBXGroup;
+			children = (
+				C32FDC512516E07700244666 /* schema.json */,
+				C32FDBC92516DDD600244666 /* AppDelegate.swift */,
+				C39A3D72251F27BA00522B71 /* API.swift */,
+				C32FDBCB2516DDD600244666 /* SceneDelegate.swift */,
+				C32FDC1C2516DED900244666 /* Model */,
+				C32FDC042516DE1800244666 /* View */,
+				C32FDBCF2516DDD900244666 /* Assets.xcassets */,
+				C32FDBD42516DDD900244666 /* LaunchScreen.storyboard */,
+				C32FDBD72516DDD900244666 /* Info.plist */,
+				C32FDBD12516DDD900244666 /* Preview Content */,
+			);
+			path = FindThatAnime;
+			sourceTree = "<group>";
+		};
+		C32FDBD12516DDD900244666 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C32FDBD22516DDD900244666 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C32FDBDF2516DDDA00244666 /* FindThatAnimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				C32FDBE02516DDDA00244666 /* FindThatAnimeTests.swift */,
+				C32FDBE22516DDDA00244666 /* Info.plist */,
+			);
+			path = FindThatAnimeTests;
+			sourceTree = "<group>";
+		};
+		C32FDBEA2516DDDA00244666 /* FindThatAnimeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C32FDBEB2516DDDA00244666 /* FindThatAnimeUITests.swift */,
+				C32FDBED2516DDDA00244666 /* Info.plist */,
+			);
+			path = FindThatAnimeUITests;
+			sourceTree = "<group>";
+		};
+		C32FDC042516DE1800244666 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C373CB49251D965800E0819F /* TestingViews */,
+				C32FDC052516DE1800244666 /* ContentView.swift */,
+				C39A3D7A251FCDA000522B71 /* DetailView.swift */,
+				C3DFB9F12533F78300EF1E20 /* SupportingView */,
+				C3DFB9EB2533F58000EF1E20 /* DetailViewSubViews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C32FDC1C2516DED900244666 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C32FDC342516DF3D00244666 /* TraceMoeAPI.swift */,
+				C3DFB9F52533FDC700EF1E20 /* AniListAPI.swift */,
+				C32FDC2F2516DF3A00244666 /* ImagePicker.swift */,
+				C32FDC232516DF1500244666 /* Models&Objects */,
+				C32FDC1D2516DEF100244666 /* GraphQl */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C32FDC1D2516DEF100244666 /* GraphQl */ = {
+			isa = PBXGroup;
+			children = (
+				C32FDC1E2516DF1200244666 /* GraphQLQuery.graphql */,
+			);
+			path = GraphQl;
+			sourceTree = "<group>";
+		};
+		C32FDC232516DF1500244666 /* Models&Objects */ = {
+			isa = PBXGroup;
+			children = (
+				C32FDC242516DF2500244666 /* AnimeInfo.swift */,
+				C362F670261F7EF500991850 /* AnimeInfoViewModel.swift */,
+				C3CF32A225394D73000C86B8 /* Genres.swift */,
+				C32FDC292516DF2600244666 /* SaveAndSuch.swift */,
+			);
+			path = "Models&Objects";
+			sourceTree = "<group>";
+		};
+		C373CB49251D965800E0819F /* TestingViews */ = {
+			isa = PBXGroup;
+			children = (
+				C373CB3F251D5B7D00E0819F /* TestingView.swift */,
+				C373CB3A251D57A400E0819F /* TestingCell.swift */,
+				C373CB50251DA19100E0819F /* TestingWithList.swift */,
+				C360C80825314C1C00D967D0 /* TestingDetails.swift */,
+			);
+			path = TestingViews;
+			sourceTree = "<group>";
+		};
+		C3DFB9EB2533F58000EF1E20 /* DetailViewSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				C3DFB9EC2533F69700EF1E20 /* Imagesub.swift */,
+				C3CF329D25394C22000C86B8 /* GenreView.swift */,
+			);
+			path = DetailViewSubViews;
+			sourceTree = "<group>";
+		};
+		C3DFB9F12533F78300EF1E20 /* SupportingView */ = {
+			isa = PBXGroup;
+			children = (
+				C32FDC072516DE1800244666 /* ImageCell.swift */,
+				C373CB44251D942700E0819F /* LoadingCircle.swift */,
+				C32FDC062516DE1800244666 /* FloatingMenu.swift */,
+			);
+			path = SupportingView;
+			sourceTree = "<group>";
+		};
+		E1CECE9E5B56FF42DBCBFA51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F52B39C8989677C5A8CB7823 /* Pods_FindThatAnime.framework */,
+				7B275D9DB4F95C14CC0D4452 /* Pods_FindThatAnime_FindThatAnimeUITests.framework */,
+				2D14755FB531671CF8363FB8 /* Pods_FindThatAnimeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C32FDBC52516DDD600244666 /* FindThatAnime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C32FDBF02516DDDA00244666 /* Build configuration list for PBXNativeTarget "FindThatAnime" */;
+			buildPhases = (
+				3A18D071C29B5273F57F342D /* [CP] Check Pods Manifest.lock */,
+				C32FDC4A2516E03500244666 /* Apollo APi struff */,
+				C32FDBC22516DDD600244666 /* Sources */,
+				C32FDBC32516DDD600244666 /* Frameworks */,
+				C32FDBC42516DDD600244666 /* Resources */,
+				8DF584C03F2AD624BD0C5763 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FindThatAnime;
+			productName = FindThatAnime;
+			productReference = C32FDBC62516DDD600244666 /* FindThatAnime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C32FDBDB2516DDDA00244666 /* FindThatAnimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C32FDBF32516DDDA00244666 /* Build configuration list for PBXNativeTarget "FindThatAnimeTests" */;
+			buildPhases = (
+				35FBF9D2C8DF4D255410634B /* [CP] Check Pods Manifest.lock */,
+				C32FDBD82516DDDA00244666 /* Sources */,
+				C32FDBD92516DDDA00244666 /* Frameworks */,
+				C32FDBDA2516DDDA00244666 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C32FDBDE2516DDDA00244666 /* PBXTargetDependency */,
+			);
+			name = FindThatAnimeTests;
+			productName = FindThatAnimeTests;
+			productReference = C32FDBDC2516DDDA00244666 /* FindThatAnimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C32FDBE62516DDDA00244666 /* FindThatAnimeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C32FDBF62516DDDA00244666 /* Build configuration list for PBXNativeTarget "FindThatAnimeUITests" */;
+			buildPhases = (
+				E4A4D598416BF5EA36E79C83 /* [CP] Check Pods Manifest.lock */,
+				C32FDBE32516DDDA00244666 /* Sources */,
+				C32FDBE42516DDDA00244666 /* Frameworks */,
+				C32FDBE52516DDDA00244666 /* Resources */,
+				000961880EFDEF61D6E95DB5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C32FDBE92516DDDA00244666 /* PBXTargetDependency */,
+			);
+			name = FindThatAnimeUITests;
+			productName = FindThatAnimeUITests;
+			productReference = C32FDBE72516DDDA00244666 /* FindThatAnimeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C32FDBBE2516DDD600244666 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					C32FDBC52516DDD600244666 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					C32FDBDB2516DDDA00244666 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = C32FDBC52516DDD600244666;
+					};
+					C32FDBE62516DDDA00244666 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = C32FDBC52516DDD600244666;
+					};
+				};
+			};
+			buildConfigurationList = C32FDBC12516DDD600244666 /* Build configuration list for PBXProject "FindThatAnime" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C32FDBBD2516DDD600244666;
+			productRefGroup = C32FDBC72516DDD600244666 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C32FDBC52516DDD600244666 /* FindThatAnime */,
+				C32FDBDB2516DDDA00244666 /* FindThatAnimeTests */,
+				C32FDBE62516DDDA00244666 /* FindThatAnimeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C32FDBC42516DDD600244666 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C32FDBD62516DDD900244666 /* LaunchScreen.storyboard in Resources */,
+				C32FDC522516E07700244666 /* schema.json in Resources */,
+				C32FDBD32516DDD900244666 /* Preview Assets.xcassets in Resources */,
+				C32FDC1F2516DF1200244666 /* GraphQLQuery.graphql in Resources */,
+				C32FDBD02516DDD900244666 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32FDBDA2516DDDA00244666 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32FDBE52516DDDA00244666 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		000961880EFDEF61D6E95DB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime-FindThatAnimeUITests/Pods-FindThatAnime-FindThatAnimeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime-FindThatAnimeUITests/Pods-FindThatAnime-FindThatAnimeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime-FindThatAnimeUITests/Pods-FindThatAnime-FindThatAnimeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35FBF9D2C8DF4D255410634B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindThatAnimeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A18D071C29B5273F57F342D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindThatAnime-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DF584C03F2AD624BD0C5763 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime/Pods-FindThatAnime-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime/Pods-FindThatAnime-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime/Pods-FindThatAnime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C32FDC4A2516E03500244666 /* Apollo APi struff */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/AnimeFinder/**/*.graphql\n",
+			);
+			name = "Apollo APi struff";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				" $(SRCROOT)/AnimeFinder/API.swift\n",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
+		E4A4D598416BF5EA36E79C83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindThatAnime-FindThatAnimeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C32FDBC22516DDD600244666 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C32FDC252516DF2500244666 /* AnimeInfo.swift in Sources */,
+				C32FDBCA2516DDD600244666 /* AppDelegate.swift in Sources */,
+				C373CB3B251D57A400E0819F /* TestingCell.swift in Sources */,
+				C3DFB9ED2533F69700EF1E20 /* Imagesub.swift in Sources */,
+				C360C80925314C1C00D967D0 /* TestingDetails.swift in Sources */,
+				C373CB40251D5B7D00E0819F /* TestingView.swift in Sources */,
+				C32FDC462516DFD100244666 /* ImageCell.swift in Sources */,
+				C32FDC2A2516DF2600244666 /* SaveAndSuch.swift in Sources */,
+				C362F671261F7EF500991850 /* AnimeInfoViewModel.swift in Sources */,
+				C39A3D73251F27BA00522B71 /* API.swift in Sources */,
+				C32FDC302516DF3A00244666 /* ImagePicker.swift in Sources */,
+				C32FDBCC2516DDD600244666 /* SceneDelegate.swift in Sources */,
+				C3CF32A325394D74000C86B8 /* Genres.swift in Sources */,
+				C32FDC0B2516DE3100244666 /* ContentView.swift in Sources */,
+				C32FDC422516DFCF00244666 /* FloatingMenu.swift in Sources */,
+				C3DFB9F62533FDC700EF1E20 /* AniListAPI.swift in Sources */,
+				C373CB51251DA19100E0819F /* TestingWithList.swift in Sources */,
+				C3CF329E25394C22000C86B8 /* GenreView.swift in Sources */,
+				C373CB45251D942800E0819F /* LoadingCircle.swift in Sources */,
+				C39A3D7B251FCDA000522B71 /* DetailView.swift in Sources */,
+				C32FDC352516DF3D00244666 /* TraceMoeAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32FDBD82516DDDA00244666 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C32FDBE12516DDDA00244666 /* FindThatAnimeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C32FDBE32516DDDA00244666 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C32FDBEC2516DDDA00244666 /* FindThatAnimeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C32FDBDE2516DDDA00244666 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C32FDBC52516DDD600244666 /* FindThatAnime */;
+			targetProxy = C32FDBDD2516DDDA00244666 /* PBXContainerItemProxy */;
+		};
+		C32FDBE92516DDDA00244666 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C32FDBC52516DDD600244666 /* FindThatAnime */;
+			targetProxy = C32FDBE82516DDDA00244666 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C32FDBD42516DDD900244666 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C32FDBD52516DDD900244666 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C32FDBEE2516DDDA00244666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C32FDBEF2516DDDA00244666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C32FDBF12516DDDA00244666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38EC7EF7B659CCA5E1A5B110 /* Pods-FindThatAnime.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FindThatAnime/Preview Content\"";
+				DEVELOPMENT_TEAM = MMZA244CU5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FindThatAnime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CalebsDank.FindThatAnime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C32FDBF22516DDDA00244666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53BFEAC4C33F4D367FF65067 /* Pods-FindThatAnime.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FindThatAnime/Preview Content\"";
+				DEVELOPMENT_TEAM = MMZA244CU5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FindThatAnime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CalebsDank.FindThatAnime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C32FDBF42516DDDA00244666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EBDC6002F8499B60F8D7CF1 /* Pods-FindThatAnimeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MMZA244CU5;
+				INFOPLIST_FILE = FindThatAnimeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CalebsDank.FindThatAnimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindThatAnime.app/FindThatAnime";
+			};
+			name = Debug;
+		};
+		C32FDBF52516DDDA00244666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 181DB4E64F0EC7DD2D1819B0 /* Pods-FindThatAnimeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MMZA244CU5;
+				INFOPLIST_FILE = FindThatAnimeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CalebsDank.FindThatAnimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindThatAnime.app/FindThatAnime";
+			};
+			name = Release;
+		};
+		C32FDBF72516DDDA00244666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 926AD31B61F0B0D662DFB2C3 /* Pods-FindThatAnime-FindThatAnimeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MMZA244CU5;
+				INFOPLIST_FILE = FindThatAnimeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CalebsDank.FindThatAnimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindThatAnime;
+			};
+			name = Debug;
+		};
+		C32FDBF82516DDDA00244666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CA9937447B61E3B266533B9 /* Pods-FindThatAnime-FindThatAnimeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MMZA244CU5;
+				INFOPLIST_FILE = FindThatAnimeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CalebsDank.FindThatAnimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindThatAnime;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C32FDBC12516DDD600244666 /* Build configuration list for PBXProject "FindThatAnime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C32FDBEE2516DDDA00244666 /* Debug */,
+				C32FDBEF2516DDDA00244666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C32FDBF02516DDDA00244666 /* Build configuration list for PBXNativeTarget "FindThatAnime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C32FDBF12516DDDA00244666 /* Debug */,
+				C32FDBF22516DDDA00244666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C32FDBF32516DDDA00244666 /* Build configuration list for PBXNativeTarget "FindThatAnimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C32FDBF42516DDDA00244666 /* Debug */,
+				C32FDBF52516DDDA00244666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C32FDBF62516DDDA00244666 /* Build configuration list for PBXNativeTarget "FindThatAnimeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C32FDBF72516DDDA00244666 /* Debug */,
+				C32FDBF82516DDDA00244666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C32FDBBE2516DDD600244666 /* Project object */;
+}
