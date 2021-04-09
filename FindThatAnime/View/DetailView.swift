@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import URLImage
 
 struct DetailView: View {
     @Binding var Anime: AnimeInfo?
@@ -68,6 +68,14 @@ struct DetailView: View {
                     
                 }
             }
+            .background(URLImage(url: URL(string:animeModel.pictureLink)!){ image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    
+                    
+            }.opacity(0.2)
+            .ignoresSafeArea())
         }
         
         

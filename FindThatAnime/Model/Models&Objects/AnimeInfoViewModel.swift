@@ -132,6 +132,12 @@ class AnimeInfoViewModel: ObservableObject{
         }
     }
     
+    var pictureLink:String{
+        get {
+            selectedShow!.pictureUrl
+        }
+    }
+    
     func deleteShow(){
             try? realm?.write{
                 realm?.delete(selectedShow!)

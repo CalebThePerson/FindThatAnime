@@ -18,9 +18,11 @@ class TraceMoeAPI: ObservableObject {
         //Paramerters and Headers
         let MyParameters = ["image":"\(ImageString)"]
         let Headers: HTTPHeaders = [.accept("application/json")]
+        let kitsuHeaders: HTTPHeaders = [.accept("application/vnd.api+json")]
         
         //Actually Making the request
         AF.request("https://trace.moe/api/search", method:.post, parameters: MyParameters, headers: Headers).responseJSON { [self] response in
+            
             Percetage = 14
             print("Working")
             
@@ -31,6 +33,7 @@ class TraceMoeAPI: ObservableObject {
                 
                 print("Almost there")
                 Percetage = 21
+
                 
                 //Creatinug our variables taht we want to save
                 guard let name = json["docs"][0]["title_english"].string else {return}
@@ -47,58 +50,79 @@ class TraceMoeAPI: ObservableObject {
                 guard let tokenthumb = json["docs"][0]["tokenthumb"].string else {return}
                 
                 Percetage = 42
+                var kitsuName = name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+                print(kitsuName)
                 
-                self.AniListapi.ObtainData(AnimeID: AnilistId) { (NewData) in
-                    let TheStuff = self.Disection(TheData: NewData)
-                    let Info = AnimeInfo()
-                    Percetage = 49
-                    Info.Name = name
-                    Percetage = 56
-                    Info.Episode = episode
-                    Percetage = 63
-                    Info.MalID = MalID
-                    Percetage = 70
-                    Info.AniListID = AnilistId
-                    Percetage = 77
-                    Info.ImageString = ImageString
-                    Percetage = 84
-                    Info.VideoURL = "https://media.trace.moe/video/$\(AnilistId)/${encodeURIComponent\(filename)}?t=$\(at)&token=$\(tokenthumb)"
-                    Percetage = 91
-                    
-                    Info.Similarity = Similarity * 100
-                    print(Similarity)
-                    //Looping through the genres and adding it
-                    for genre in NewData.media?.genres as [String]{
-                        let RealmGenres = Genres()
-                        RealmGenres.genre = genre
-                        Info.genres.append(RealmGenres)
+                AF.request("https://kitsu.io/api/edge/anime?filter[text]=\(kitsuName))", method:.get, headers: kitsuHeaders).responseJSON { kitsuResponse in
+                    print(kitsuResponse)
+                    if let kitsuData = kitsuResponse.data {
+                        print("testing")
+
+                        let kitsuJson = try! JSON(data: kitsuData)
+                        
+                        print("here??")
+                        guard let pictureURL = kitsuJson["data"][0]["attributes"]["posterImage"]["original"].string else {return}
+                        print(pictureURL)
+                        
+                        self.AniListapi.ObtainData(AnimeID: AnilistId) { (NewData) in
+                            
+                            
+                            let TheStuff = self.Disection(TheData: NewData)
+                            let Info = AnimeInfo()
+                            Percetage = 49
+                            Info.Name = name
+                            Percetage = 56
+                            Info.Episode = episode
+                            Percetage = 63
+                            Info.MalID = MalID
+                            Percetage = 70
+                            Info.AniListID = AnilistId
+                            Percetage = 77
+                            Info.ImageString = ImageString
+                            Percetage = 84
+                            Info.VideoURL = "https://media.trace.moe/video/$\(AnilistId)/${encodeURIComponent\(filename)}?t=$\(at)&token=$\(tokenthumb)"
+                            Percetage = 91
+                            Info.pictureUrl = pictureURL
+                            
+                            Info.Similarity = Similarity * 100
+                            print(Similarity)
+                            //Looping through the genres and adding it
+                            for genre in NewData.media?.genres as [String]{
+                                let RealmGenres = Genres()
+                                RealmGenres.genre = genre
+                                Info.genres.append(RealmGenres)
+                            }
+                            
+                            Info.Description = TheStuff["Description"] as! String
+                            Info.Popularity = TheStuff["Popularity"] as! Int
+                            
+                            //Giving it a unique id so that it doesn't break when using the same name anime
+                            Info.Id = UUID().uuidString
+                            
+                            
+                            self.animeModel.addShow(theShow: Info)
+                            Percetage = 100
+                            print("Done")
+                            self.DataIsSaved = true
+                            self.CirclePresenting = false
+                            
+                            print("https://media.trace.moe/video/${\(AnilistId)}/${encodeURIComponent(\(filename))}?t=${\(at)}&token=$\(tokenthumb)")
+                        }
                     }
                     
-                    Info.Description = TheStuff["Description"] as! String
-                    Info.Popularity = TheStuff["Popularity"] as! Int
-                    
-                    //Giving it a unique id so that it doesn't break when using the same name anime
-                    Info.Id = UUID().uuidString
-                    
-                    
-                    self.animeModel.addShow(theShow: Info)
-                    Percetage = 100
-                    print("Done")
-                    self.DataIsSaved = true
-                    self.CirclePresenting = false
-                    
-                    print("https://media.trace.moe/video/${\(AnilistId)}/${encodeURIComponent(\(filename))}?t=${\(at)}&token=$\(tokenthumb)")
                 }
                 
-                //https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(filename)}?t=${at}&token=${tokenthumb}`
-                
-                
-                
             }
+            
+            //https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(filename)}?t=${at}&token=${tokenthumb}`
+            
+            
+            
         }
-        
     }
+    
 }
+
 extension TraceMoeAPI {
     
     func Disection(TheData: QueryQuery.Data) -> [(String):(Any)] {

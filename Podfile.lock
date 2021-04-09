@@ -9,12 +9,32 @@ PODS:
   - RealmSwift (10.7.2):
     - Realm (= 10.7.2)
   - SwiftyJSON (5.0.0)
+  - URLImage (2.2.3):
+    - URLImage/Common (= 2.2.3)
+    - URLImage/DownloadManager (= 2.2.3)
+    - URLImage/FileIndex (= 2.2.3)
+    - URLImage/ImageDecoder (= 2.2.3)
+    - URLImage/Log (= 2.2.3)
+    - URLImage/PlainDatabase (= 2.2.3)
+    - URLImage/RemoteContentView (= 2.2.3)
+  - URLImage/Common (2.2.3)
+  - URLImage/DownloadManager (2.2.3):
+    - URLImage/Log
+  - URLImage/FileIndex (2.2.3):
+    - URLImage/Common
+    - URLImage/Log
+    - URLImage/PlainDatabase
+  - URLImage/ImageDecoder (2.2.3)
+  - URLImage/Log (2.2.3)
+  - URLImage/PlainDatabase (2.2.3)
+  - URLImage/RemoteContentView (2.2.3)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Apollo (= 0.33.0-beta1)
   - RealmSwift (= 10.7.2)
   - SwiftyJSON
+  - URLImage
 
 SPEC REPOS:
   trunk:
@@ -23,6 +43,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SwiftyJSON
+    - URLImage
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
@@ -30,7 +51,8 @@ SPEC CHECKSUMS:
   Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
   RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  URLImage: 1eeb43e09cd736008da21944ba51d433ef41c09d
 
-PODFILE CHECKSUM: ea9101eac485e209f052c349b77d8c5ee3cef744
+PODFILE CHECKSUM: d63f1ab6b237bc1a36a85ad5832b742913f40f66
 
 COCOAPODS: 1.10.1

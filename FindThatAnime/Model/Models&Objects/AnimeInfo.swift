@@ -23,6 +23,7 @@ class AnimeInfo: Object, Identifiable, ObjectKeyIdentifiable {
     @objc dynamic var Popularity: Int = 0
     @objc dynamic var SiteURL: String = ""
     @objc dynamic var Similarity: Double = 0.0
+    @objc dynamic var pictureUrl:String = ""
     var genres = List<Genres>()
     
 }
