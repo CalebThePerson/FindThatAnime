@@ -47,19 +47,25 @@ struct ContentView: View {
                             
                         }
                         
-                        if API.CirclePresenting == true{
-                            LoadingCircle(TheAPI: API)
-                                .padding(.top)
-                        }
+//                        if API.CirclePresenting == true{
+//                            LoadingCircle(TheAPI: API)
+//                                .padding(.top)
+//                        }
                         
                     }
 
                 }
+                .overlay(
+                    VStack{
+                        HStack{
+                            FloatingMenu(TraceAPI: API)
+                                .padding(.bottom, 30)
+                                .padding(.horizontal, 300)
+                        }
+                    }, alignment: .bottomLeading)
 
                 .lineSpacing(0)
-                
-                FloatingMenu(TraceAPI: API)
-                    .offset(x:150, y:-10)
+
             }
         }
         .alert(isPresented: $API.showAlert, content: {
