@@ -46,14 +46,15 @@ struct ContentView: View {
                             
                             
                         }
+                        if API.CirclePresenting == true{
+                            LoadingCircle(TheAPI: API)
+                                .padding(.top, 5)
+                        }
                         
-//                        if API.CirclePresenting == true{
-//                            LoadingCircle(TheAPI: API)
-//                                .padding(.top)
-//                        }
+                        
                         
                     }
-
+                    
                 }
                 .overlay(
                     VStack{
@@ -63,9 +64,16 @@ struct ContentView: View {
                                 .padding(.horizontal, 300)
                         }
                     }, alignment: .bottomLeading)
-
+                
+                .overlay(
+                    VStack{
+                        HStack{
+                            
+                        }
+                    }, alignment: .center)
+                
                 .lineSpacing(0)
-
+                
             }
         }
         .alert(isPresented: $API.showAlert, content: {

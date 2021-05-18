@@ -97,7 +97,7 @@ struct DetailView: View {
                     presentationMode.wrappedValue.dismiss()
                 }, secondaryButton: .cancel())
             }
-            .background(URLImage(url: URL(string:animeModel.pictureLink)!){ image in
+            .background(URLImage(URL(string:animeModel.pictureLink)!){ image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)

@@ -3,11 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		015109A4FA696FCD43E5C499 /* Pods_FindThatAnime_FindThatAnimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B275D9DB4F95C14CC0D4452 /* Pods_FindThatAnime_FindThatAnimeUITests.framework */; };
+		C3246153265361EE00345EEE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C3246152265361EE00345EEE /* Alamofire */; };
+		C32461562653628800345EEE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C32461552653628800345EEE /* SwiftyJSON */; };
+		C3246159265363A100345EEE /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C3246158265363A100345EEE /* Realm */; };
+		C324615B265363A100345EEE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C324615A265363A100345EEE /* RealmSwift */; };
+		C324615E265364EC00345EEE /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = C324615D265364EC00345EEE /* Apollo */; };
+		C3246160265364EC00345EEE /* ApolloCore in Frameworks */ = {isa = PBXBuildFile; productRef = C324615F265364EC00345EEE /* ApolloCore */; };
+		C32461632653667900345EEE /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = C32461622653667900345EEE /* URLImageStore */; };
+		C32461652653667900345EEE /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = C32461642653667900345EEE /* URLImage */; };
 		C32FDBCA2516DDD600244666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDBC92516DDD600244666 /* AppDelegate.swift */; };
 		C32FDBCC2516DDD600244666 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32FDBCB2516DDD600244666 /* SceneDelegate.swift */; };
 		C32FDBD02516DDD900244666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C32FDBCF2516DDD900244666 /* Assets.xcassets */; };
@@ -36,8 +43,6 @@
 		C3CF32A325394D74000C86B8 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF32A225394D73000C86B8 /* Genres.swift */; };
 		C3DFB9ED2533F69700EF1E20 /* Imagesub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFB9EC2533F69700EF1E20 /* Imagesub.swift */; };
 		C3DFB9F62533FDC700EF1E20 /* AniListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFB9F52533FDC700EF1E20 /* AniListAPI.swift */; };
-		E94050F69BCEB2DF227AFDE1 /* Pods_FindThatAnime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52B39C8989677C5A8CB7823 /* Pods_FindThatAnime.framework */; };
-		F6E0FEDBD8D543D661606E07 /* Pods_FindThatAnimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D14755FB531671CF8363FB8 /* Pods_FindThatAnimeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,14 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		181DB4E64F0EC7DD2D1819B0 /* Pods-FindThatAnimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnimeTests.release.xcconfig"; path = "Target Support Files/Pods-FindThatAnimeTests/Pods-FindThatAnimeTests.release.xcconfig"; sourceTree = "<group>"; };
-		2D14755FB531671CF8363FB8 /* Pods_FindThatAnimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindThatAnimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38EC7EF7B659CCA5E1A5B110 /* Pods-FindThatAnime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnime.debug.xcconfig"; path = "Target Support Files/Pods-FindThatAnime/Pods-FindThatAnime.debug.xcconfig"; sourceTree = "<group>"; };
-		4CA9937447B61E3B266533B9 /* Pods-FindThatAnime-FindThatAnimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnime-FindThatAnimeUITests.release.xcconfig"; path = "Target Support Files/Pods-FindThatAnime-FindThatAnimeUITests/Pods-FindThatAnime-FindThatAnimeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		53BFEAC4C33F4D367FF65067 /* Pods-FindThatAnime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnime.release.xcconfig"; path = "Target Support Files/Pods-FindThatAnime/Pods-FindThatAnime.release.xcconfig"; sourceTree = "<group>"; };
-		7B275D9DB4F95C14CC0D4452 /* Pods_FindThatAnime_FindThatAnimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindThatAnime_FindThatAnimeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EBDC6002F8499B60F8D7CF1 /* Pods-FindThatAnimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnimeTests.debug.xcconfig"; path = "Target Support Files/Pods-FindThatAnimeTests/Pods-FindThatAnimeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		926AD31B61F0B0D662DFB2C3 /* Pods-FindThatAnime-FindThatAnimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindThatAnime-FindThatAnimeUITests.debug.xcconfig"; path = "Target Support Files/Pods-FindThatAnime-FindThatAnimeUITests/Pods-FindThatAnime-FindThatAnimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C32FDBC62516DDD600244666 /* FindThatAnime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindThatAnime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32FDBC92516DDD600244666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C32FDBCB2516DDD600244666 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +97,6 @@
 		C3CF32A225394D73000C86B8 /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		C3DFB9EC2533F69700EF1E20 /* Imagesub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagesub.swift; sourceTree = "<group>"; };
 		C3DFB9F52533FDC700EF1E20 /* AniListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniListAPI.swift; sourceTree = "<group>"; };
-		F52B39C8989677C5A8CB7823 /* Pods_FindThatAnime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindThatAnime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +104,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E94050F69BCEB2DF227AFDE1 /* Pods_FindThatAnime.framework in Frameworks */,
+				C32461632653667900345EEE /* URLImageStore in Frameworks */,
+				C32461652653667900345EEE /* URLImage in Frameworks */,
+				C32461562653628800345EEE /* SwiftyJSON in Frameworks */,
+				C324615E265364EC00345EEE /* Apollo in Frameworks */,
+				C3246159265363A100345EEE /* Realm in Frameworks */,
+				C324615B265363A100345EEE /* RealmSwift in Frameworks */,
+				C3246160265364EC00345EEE /* ApolloCore in Frameworks */,
+				C3246153265361EE00345EEE /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6E0FEDBD8D543D661606E07 /* Pods_FindThatAnimeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,26 +126,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				015109A4FA696FCD43E5C499 /* Pods_FindThatAnime_FindThatAnimeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		77EA4AB17F7B9B0BB5ADFF0D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				38EC7EF7B659CCA5E1A5B110 /* Pods-FindThatAnime.debug.xcconfig */,
-				53BFEAC4C33F4D367FF65067 /* Pods-FindThatAnime.release.xcconfig */,
-				926AD31B61F0B0D662DFB2C3 /* Pods-FindThatAnime-FindThatAnimeUITests.debug.xcconfig */,
-				4CA9937447B61E3B266533B9 /* Pods-FindThatAnime-FindThatAnimeUITests.release.xcconfig */,
-				8EBDC6002F8499B60F8D7CF1 /* Pods-FindThatAnimeTests.debug.xcconfig */,
-				181DB4E64F0EC7DD2D1819B0 /* Pods-FindThatAnimeTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		C32FDBBD2516DDD600244666 = {
 			isa = PBXGroup;
 			children = (
@@ -151,8 +139,6 @@
 				C32FDBDF2516DDDA00244666 /* FindThatAnimeTests */,
 				C32FDBEA2516DDDA00244666 /* FindThatAnimeUITests */,
 				C32FDBC72516DDD600244666 /* Products */,
-				77EA4AB17F7B9B0BB5ADFF0D /* Pods */,
-				E1CECE9E5B56FF42DBCBFA51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,16 +268,6 @@
 			path = SupportingView;
 			sourceTree = "<group>";
 		};
-		E1CECE9E5B56FF42DBCBFA51 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F52B39C8989677C5A8CB7823 /* Pods_FindThatAnime.framework */,
-				7B275D9DB4F95C14CC0D4452 /* Pods_FindThatAnime_FindThatAnimeUITests.framework */,
-				2D14755FB531671CF8363FB8 /* Pods_FindThatAnimeTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,18 +275,26 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C32FDBF02516DDDA00244666 /* Build configuration list for PBXNativeTarget "FindThatAnime" */;
 			buildPhases = (
-				3A18D071C29B5273F57F342D /* [CP] Check Pods Manifest.lock */,
 				C32FDC4A2516E03500244666 /* Apollo APi struff */,
 				C32FDBC22516DDD600244666 /* Sources */,
 				C32FDBC32516DDD600244666 /* Frameworks */,
 				C32FDBC42516DDD600244666 /* Resources */,
-				8DF584C03F2AD624BD0C5763 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FindThatAnime;
+			packageProductDependencies = (
+				C3246152265361EE00345EEE /* Alamofire */,
+				C32461552653628800345EEE /* SwiftyJSON */,
+				C3246158265363A100345EEE /* Realm */,
+				C324615A265363A100345EEE /* RealmSwift */,
+				C324615D265364EC00345EEE /* Apollo */,
+				C324615F265364EC00345EEE /* ApolloCore */,
+				C32461622653667900345EEE /* URLImageStore */,
+				C32461642653667900345EEE /* URLImage */,
+			);
 			productName = FindThatAnime;
 			productReference = C32FDBC62516DDD600244666 /* FindThatAnime.app */;
 			productType = "com.apple.product-type.application";
@@ -319,7 +303,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C32FDBF32516DDDA00244666 /* Build configuration list for PBXNativeTarget "FindThatAnimeTests" */;
 			buildPhases = (
-				35FBF9D2C8DF4D255410634B /* [CP] Check Pods Manifest.lock */,
 				C32FDBD82516DDDA00244666 /* Sources */,
 				C32FDBD92516DDDA00244666 /* Frameworks */,
 				C32FDBDA2516DDDA00244666 /* Resources */,
@@ -338,11 +321,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C32FDBF62516DDDA00244666 /* Build configuration list for PBXNativeTarget "FindThatAnimeUITests" */;
 			buildPhases = (
-				E4A4D598416BF5EA36E79C83 /* [CP] Check Pods Manifest.lock */,
 				C32FDBE32516DDDA00244666 /* Sources */,
 				C32FDBE42516DDDA00244666 /* Frameworks */,
 				C32FDBE52516DDDA00244666 /* Resources */,
-				000961880EFDEF61D6E95DB5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -385,6 +366,13 @@
 				Base,
 			);
 			mainGroup = C32FDBBD2516DDD600244666;
+			packageReferences = (
+				C3246151265361EE00345EEE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C32461542653628800345EEE /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				C3246157265363A000345EEE /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				C324615C265364EC00345EEE /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				C32461612653667900345EEE /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = C32FDBC72516DDD600244666 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -426,84 +414,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		000961880EFDEF61D6E95DB5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime-FindThatAnimeUITests/Pods-FindThatAnime-FindThatAnimeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime-FindThatAnimeUITests/Pods-FindThatAnime-FindThatAnimeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime-FindThatAnimeUITests/Pods-FindThatAnime-FindThatAnimeUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		35FBF9D2C8DF4D255410634B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FindThatAnimeTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3A18D071C29B5273F57F342D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FindThatAnime-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8DF584C03F2AD624BD0C5763 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime/Pods-FindThatAnime-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime/Pods-FindThatAnime-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindThatAnime/Pods-FindThatAnime-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C32FDC4A2516E03500244666 /* Apollo APi struff */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -522,29 +432,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
-		};
-		E4A4D598416BF5EA36E79C83 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FindThatAnime-FindThatAnimeUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -738,7 +626,6 @@
 		};
 		C32FDBF12516DDDA00244666 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38EC7EF7B659CCA5E1A5B110 /* Pods-FindThatAnime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -761,7 +648,6 @@
 		};
 		C32FDBF22516DDDA00244666 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53BFEAC4C33F4D367FF65067 /* Pods-FindThatAnime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -784,7 +670,6 @@
 		};
 		C32FDBF42516DDDA00244666 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EBDC6002F8499B60F8D7CF1 /* Pods-FindThatAnimeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -807,7 +692,6 @@
 		};
 		C32FDBF52516DDDA00244666 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 181DB4E64F0EC7DD2D1819B0 /* Pods-FindThatAnimeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -830,7 +714,6 @@
 		};
 		C32FDBF72516DDDA00244666 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 926AD31B61F0B0D662DFB2C3 /* Pods-FindThatAnime-FindThatAnimeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -851,7 +734,6 @@
 		};
 		C32FDBF82516DDDA00244666 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CA9937447B61E3B266533B9 /* Pods-FindThatAnime-FindThatAnimeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -910,6 +792,92 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C3246151265361EE00345EEE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		C32461542653628800345EEE /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		C3246157265363A000345EEE /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.7.6;
+			};
+		};
+		C324615C265364EC00345EEE /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.43.0;
+			};
+		};
+		C32461612653667900345EEE /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C3246152265361EE00345EEE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3246151265361EE00345EEE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		C32461552653628800345EEE /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C32461542653628800345EEE /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		C3246158265363A100345EEE /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3246157265363A000345EEE /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		C324615A265363A100345EEE /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3246157265363A000345EEE /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		C324615D265364EC00345EEE /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C324615C265364EC00345EEE /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		C324615F265364EC00345EEE /* ApolloCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C324615C265364EC00345EEE /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloCore;
+		};
+		C32461622653667900345EEE /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C32461612653667900345EEE /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+		C32461642653667900345EEE /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C32461612653667900345EEE /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C32FDBBE2516DDD600244666 /* Project object */;
 }
