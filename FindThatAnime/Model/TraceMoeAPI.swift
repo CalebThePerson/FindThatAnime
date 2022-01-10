@@ -18,119 +18,58 @@ class TraceMoeAPI: ObservableObject, showingAlert {
         CirclePresenting=true
         Percetage = 7
         //Paramerters and Headers
-        let MyParameters = ["image":"\(ImageString)"]
-        let Headers: HTTPHeaders = [.accept("application/json")]
+        let myImage = convertBase64ToImage(ImageString)
+        let imageData = myImage.jpegData(compressionQuality: 0.50)!
         let kitsuHeaders: HTTPHeaders = [.accept("application/vnd.api+json")]
         var usableTitle  = ""
         
-        //Actually Making the request
-        AF.request("https://trace.moe/api/search", method:.post, parameters: MyParameters, headers: Headers).responseJSON { [self] response in
-            
-            Percetage = 14
-            print("Working")
-            
+        
+        //Uploads the image to the api and making the call
+        AF.upload(imageData, to: "https://api.trace.moe/search").responseJSON { response in
             if let Data = response.data{
-                print("come on")
-                //Creates the JSON Files
+                print("pog")
                 let json = try! JSON(data: Data)
-                print(json["docs"][0])
-                
-                print("Almost there")
-                Percetage = 21
-
-                
-                //Creatinug our variables taht we want to save
-                print("start")
-                if json["docs"][0]["title_english"].string == nil{
+                //                print(json["result"][0])
+                //Creating Variables
+                if json["result"][0]["title_english"].string == nil{
                     usableTitle = "title"
-                } else{
+                } else {
                     usableTitle = "title_english"
                 }
+                guard let episode = json["result"][0]["episode"].int else {return}
+                guard let AnilistId = json["result"][0]["anilist"].int else {return}
+                guard let Similarity = json["result"][0]["similarity"].double else {return}
+                print("welp")
                 
-                guard let name = json["docs"][0][usableTitle].string else {return; self.showAlert = true}
-                print("Boom")
-                guard let episode = json["docs"][0]["episode"].int else {return}
-                Percetage = 28
-                guard let AnilistId = json["docs"][0]["anilist_id"].int else {return}
-                guard let MalID = json["docs"][0]["mal_id"].int else {return}
-                guard let Similarity = json["docs"][0]["similarity"].double else {return}
-                Percetage = 35
-                
-                //The Video Variables
-                guard let at = json["docs"][0]["at"].int else {return}
-                guard let filename = json["docs"][0]["filename"].string else {return}
-                guard let tokenthumb = json["docs"][0]["tokenthumb"].string else {return}
-                
-                Percetage = 42
-                var kitsuName = name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-                print(kitsuName)
-                
-                AF.request("https://kitsu.io/api/edge/anime?filter[text]=\(kitsuName))", method:.get, headers: kitsuHeaders).responseJSON { kitsuResponse in
-                    print(kitsuResponse)
-                    if let kitsuData = kitsuResponse.data {
-                        print("testing")
-
-                        let kitsuJson = try! JSON(data: kitsuData)
-                        
-                        print("here??")
-                        guard let pictureURL = kitsuJson["data"][0]["attributes"]["posterImage"]["original"].string else {return}
-                        print(pictureURL)
-                        
-                        self.AniListapi.ObtainData(AnimeID: AnilistId) { (NewData) in
-                            
-                            
-                            let TheStuff = self.Disection(TheData: NewData)
-                            let Info = AnimeInfo()
-                            Percetage = 49
-                            Info.Name = name
-                            Percetage = 56
-                            Info.Episode = episode
-                            Percetage = 63
-                            Info.MalID = MalID
-                            Percetage = 70
-                            Info.AniListID = AnilistId
-                            Percetage = 77
-                            Info.ImageString = ImageString
-                            Percetage = 84
-                            Info.VideoURL = "https://media.trace.moe/video/$\(AnilistId)/${encodeURIComponent\(filename)}?t=$\(at)&token=$\(tokenthumb)"
-                            Percetage = 91
-                            Info.pictureUrl = pictureURL
-                            
-                            Info.Similarity = Similarity * 100
-                            print(Similarity)
-                            //Looping through the genres and adding it
-                            for genre in NewData.media?.genres as [String]{
-                                let RealmGenres = Genres()
-                                RealmGenres.genre = genre
-                                Info.genres.append(RealmGenres)
-                            }
-                            
-                            Info.Description = TheStuff["Description"] as! String
-                            Info.Popularity = TheStuff["Popularity"] as! Int
-                            
-                            //Giving it a unique id so that it doesn't break when using the same name anime
-                            Info.Id = UUID().uuidString
-                            
-                            
-                            self.animeModel.addShow(theShow: Info)
-                            Percetage = 100
-                            print("Done")
-                            self.DataIsSaved = true
-                            self.CirclePresenting = false
-                            
-                            print("https://media.trace.moe/video/${\(AnilistId)}/${encodeURIComponent(\(filename))}?t=${\(at)}&token=$\(tokenthumb)")
-                        }
+                self.AniListapi.ObtainData(AnimeID: AnilistId) { NewData in
+                    let cleanData = self.Disection(TheData: NewData)
+                    let info = AnimeInfo()
+                    info.Name = cleanData["title"] as! String
+                    info.Episode = episode
+                    info.MalID = cleanData["malId"] as! Int
+                    info.AniListID = AnilistId
+                    info.ImageString = ImageString
+                    info.pictureUrl = cleanData["coverImage"] as! String
+                    info.Description = cleanData["Description"] as! String
+                    info.Similarity = Similarity * 100
+                    info.Id = UUID().uuidString
+                    
+                    
+                    for genre in NewData.media?.genres as [String]{
+                        let RealmGenres = Genres()
+                        RealmGenres.genre = genre
+                        info.genres.append(RealmGenres)
                     }
                     
+                    self.animeModel.addShow(theShow: info)
+                    self.DataIsSaved = true
+                    self.CirclePresenting = false
+                    
                 }
-                
             }
-            
-            //https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(filename)}?t=${at}&token=${tokenthumb}`
-            
         }
+        
     }
-    
 }
 
 extension TraceMoeAPI {
@@ -150,14 +89,24 @@ extension TraceMoeAPI {
         let StartDate = TheData.media?.startDate
         let Populatiry = TheData.media?.popularity
         let SiteUrl = TheData.media?.siteUrl
+        let title = TheData.media?.title?.english
+        let coverImage = TheData.media?.coverImage?.medium
+        let malId = TheData.media?.idMal
         
         Poggers["Description"] = Description
         Poggers["Popularity"] = Populatiry
         Poggers["SiteURL"] = SiteUrl
+        Poggers["title"] = title
+        Poggers["coverImage"] = coverImage
+        Poggers["malId"] = malId
         
         return Poggers
         
     }
     
-    
+    func convertBase64ToImage(_ str: String) -> UIImage {
+        let dataDecoded : Data = Data(base64Encoded: str, options: .ignoreUnknownCharacters)!
+        let decodedimage = UIImage(data: dataDecoded)
+        return decodedimage!
+    }
 }

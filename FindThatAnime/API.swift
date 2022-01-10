@@ -11,6 +11,11 @@ public final class QueryQuery: GraphQLQuery {
     query Query($id: Int!) {
       Media(id: $id) {
         __typename
+        title {
+          __typename
+          english
+          native
+        }
         startDate {
           __typename
           year
@@ -27,6 +32,11 @@ public final class QueryQuery: GraphQLQuery {
         genres
         popularity
         siteUrl
+        idMal
+        coverImage {
+          __typename
+          medium
+        }
       }
     }
     """
@@ -78,12 +88,15 @@ public final class QueryQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("title", type: .object(Title.selections)),
           GraphQLField("startDate", type: .object(StartDate.selections)),
           GraphQLField("endDate", type: .object(EndDate.selections)),
           GraphQLField("description", arguments: ["asHtml": false], type: .scalar(String.self)),
           GraphQLField("genres", type: .list(.scalar(String.self))),
           GraphQLField("popularity", type: .scalar(Int.self)),
           GraphQLField("siteUrl", type: .scalar(String.self)),
+          GraphQLField("idMal", type: .scalar(Int.self)),
+          GraphQLField("coverImage", type: .object(CoverImage.selections)),
         ]
       }
 
@@ -93,8 +106,8 @@ public final class QueryQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(startDate: StartDate? = nil, endDate: EndDate? = nil, description: String? = nil, genres: [String?]? = nil, popularity: Int? = nil, siteUrl: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Media", "startDate": startDate.flatMap { (value: StartDate) -> ResultMap in value.resultMap }, "endDate": endDate.flatMap { (value: EndDate) -> ResultMap in value.resultMap }, "description": description, "genres": genres, "popularity": popularity, "siteUrl": siteUrl])
+      public init(title: Title? = nil, startDate: StartDate? = nil, endDate: EndDate? = nil, description: String? = nil, genres: [String?]? = nil, popularity: Int? = nil, siteUrl: String? = nil, idMal: Int? = nil, coverImage: CoverImage? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Media", "title": title.flatMap { (value: Title) -> ResultMap in value.resultMap }, "startDate": startDate.flatMap { (value: StartDate) -> ResultMap in value.resultMap }, "endDate": endDate.flatMap { (value: EndDate) -> ResultMap in value.resultMap }, "description": description, "genres": genres, "popularity": popularity, "siteUrl": siteUrl, "idMal": idMal, "coverImage": coverImage.flatMap { (value: CoverImage) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -103,6 +116,16 @@ public final class QueryQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// The official titles of the media in various languages
+      public var title: Title? {
+        get {
+          return (resultMap["title"] as? ResultMap).flatMap { Title(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "title")
         }
       }
 
@@ -163,6 +186,77 @@ public final class QueryQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "siteUrl")
+        }
+      }
+
+      /// The mal id of the media
+      public var idMal: Int? {
+        get {
+          return resultMap["idMal"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "idMal")
+        }
+      }
+
+      /// The cover images of the media
+      public var coverImage: CoverImage? {
+        get {
+          return (resultMap["coverImage"] as? ResultMap).flatMap { CoverImage(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "coverImage")
+        }
+      }
+
+      public struct Title: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["MediaTitle"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("english", type: .scalar(String.self)),
+            GraphQLField("native", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(english: String? = nil, native: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaTitle", "english": english, "native": native])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The official english title
+        public var english: String? {
+          get {
+            return resultMap["english"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "english")
+          }
+        }
+
+        /// Official title in it's native language
+        public var native: String? {
+          get {
+            return resultMap["native"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "native")
+          }
         }
       }
 
@@ -286,6 +380,46 @@ public final class QueryQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "day")
+          }
+        }
+      }
+
+      public struct CoverImage: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["MediaCoverImage"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("medium", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(medium: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaCoverImage", "medium": medium])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// The cover image url of the media at medium size
+        public var medium: String? {
+          get {
+            return resultMap["medium"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "medium")
           }
         }
       }
