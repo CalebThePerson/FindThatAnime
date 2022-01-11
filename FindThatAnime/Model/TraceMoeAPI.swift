@@ -26,9 +26,9 @@ class TraceMoeAPI: ObservableObject, showingAlert {
         
         //Uploads the image to the api and making the call
         AF.upload(imageData, to: "https://api.trace.moe/search").responseJSON { response in
-            if let Data = response.data{
+            if let jsonData = response.data{
                 print("pog")
-                let json = try! JSON(data: Data)
+                let json = try! JSON(data: jsonData)
                 //                print(json["result"][0])
                 //Creating Variables
                 if json["result"][0]["title_english"].string == nil{
@@ -44,13 +44,16 @@ class TraceMoeAPI: ObservableObject, showingAlert {
                 self.AniListapi.ObtainData(AnimeID: AnilistId) { NewData in
                     let cleanData = self.Disection(TheData: NewData)
                     let info = AnimeInfo()
+                    let url = URL(string: cleanData["coverImage"] as! String)
+                    let data = try? Data(contentsOf: url!)
+                    let image: UIImage = UIImage(data: data!)!
+                    
                     info.Name = cleanData["title"] as! String
                     info.Episode = episode
                     info.MalID = cleanData["malId"] as! Int
                     info.AniListID = AnilistId
                     info.ImageString = ImageString
-                    info.pictureUrl = cleanData["coverImage"] as! String
-    
+                    info.pictureUrl = self.convertImageToBase64(image)
                     info.Description = cleanData["Description"] as! String
                     info.Similarity = Similarity * 100
                     info.Id = UUID().uuidString
@@ -110,4 +113,9 @@ extension TraceMoeAPI {
         let decodedimage = UIImage(data: dataDecoded)
         return decodedimage!
     }
+    func convertImageToBase64(_ image: UIImage) -> String {
+            let imageData:NSData = image.jpegData(compressionQuality: 0.4)! as NSData
+            let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+            return strBase64
+        }
 }

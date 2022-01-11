@@ -97,14 +97,11 @@ struct DetailView: View {
                     presentationMode.wrappedValue.dismiss()
                 }, secondaryButton: .cancel())
             }
-            .background(URLImage(URL(string:animeModel.pictureLink)!){ image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    
-                    
-            }.opacity(0.2)
-            .ignoresSafeArea())
+            .background(Image(uiImage: convertBase64ToImage(animeModel.pictureLink))
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .opacity(0.2)
+                .ignoresSafeArea())
         }
     }
 }
