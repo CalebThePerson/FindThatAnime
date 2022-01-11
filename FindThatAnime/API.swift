@@ -36,6 +36,8 @@ public final class QueryQuery: GraphQLQuery {
         coverImage {
           __typename
           medium
+          large
+          extraLarge
         }
       }
     }
@@ -391,6 +393,8 @@ public final class QueryQuery: GraphQLQuery {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("medium", type: .scalar(String.self)),
+            GraphQLField("large", type: .scalar(String.self)),
+            GraphQLField("extraLarge", type: .scalar(String.self)),
           ]
         }
 
@@ -400,8 +404,8 @@ public final class QueryQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(medium: String? = nil) {
-          self.init(unsafeResultMap: ["__typename": "MediaCoverImage", "medium": medium])
+        public init(medium: String? = nil, large: String? = nil, extraLarge: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "MediaCoverImage", "medium": medium, "large": large, "extraLarge": extraLarge])
         }
 
         public var __typename: String {
@@ -420,6 +424,26 @@ public final class QueryQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "medium")
+          }
+        }
+
+        /// The cover image url of the media at a large size
+        public var large: String? {
+          get {
+            return resultMap["large"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "large")
+          }
+        }
+
+        /// The cover image url of the media at its largest size. If this size isn't available, large will be provided instead.
+        public var extraLarge: String? {
+          get {
+            return resultMap["extraLarge"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "extraLarge")
           }
         }
       }

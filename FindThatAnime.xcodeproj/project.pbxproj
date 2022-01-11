@@ -38,7 +38,7 @@
 		C373CB45251D942800E0819F /* LoadingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373CB44251D942700E0819F /* LoadingCircle.swift */; };
 		C373CB51251DA19100E0819F /* TestingWithList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373CB50251DA19100E0819F /* TestingWithList.swift */; };
 		C39A3D7B251FCDA000522B71 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39A3D7A251FCDA000522B71 /* DetailView.swift */; };
-		C3B8B610278CF1F500F82CE6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39A3D72251F27BA00522B71 /* API.swift */; };
+		C3B8B611278CFD2900F82CE6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39A3D72251F27BA00522B71 /* API.swift */; };
 		C3CF329E25394C22000C86B8 /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF329D25394C22000C86B8 /* GenreView.swift */; };
 		C3CF32A325394D74000C86B8 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF32A225394D73000C86B8 /* Genres.swift */; };
 		C3DFB9ED2533F69700EF1E20 /* Imagesub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFB9EC2533F69700EF1E20 /* Imagesub.swift */; };
@@ -441,7 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3B8B610278CF1F500F82CE6 /* API.swift in Sources */,
+				C3B8B611278CFD2900F82CE6 /* API.swift in Sources */,
 				C32FDC252516DF2500244666 /* AnimeInfo.swift in Sources */,
 				C32FDBCA2516DDD600244666 /* AppDelegate.swift in Sources */,
 				C373CB3B251D57A400E0819F /* TestingCell.swift in Sources */,

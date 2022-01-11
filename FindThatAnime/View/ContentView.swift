@@ -50,11 +50,7 @@ struct ContentView: View {
                             LoadingCircle(TheAPI: API)
                                 .padding(.top, 5)
                         }
-                        
-                        
-                        
                     }
-                    
                 }
                 .overlay(
                     VStack{

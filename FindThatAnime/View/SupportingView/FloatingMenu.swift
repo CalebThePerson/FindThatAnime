@@ -27,10 +27,10 @@ struct FloatingMenu: View {
         VStack {
             Spacer()
             if showMenuItem1 {
-                MenuItem(icon: "gear")
+//                MenuItem(icon: "gear")
             }
             if showMenuItem2 {
-                MenuItem(icon: "book")
+//                MenuItem(icon: "book")
             }
             if showMenuItem3 {
                 Button(action: { self.ShowingImagePicker.toggle()

@@ -106,9 +106,6 @@ struct DetailView: View {
             }.opacity(0.2)
             .ignoresSafeArea())
         }
-        
-        
-        
     }
 }
 

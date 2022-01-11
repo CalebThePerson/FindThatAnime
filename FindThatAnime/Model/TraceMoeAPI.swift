@@ -50,6 +50,7 @@ class TraceMoeAPI: ObservableObject, showingAlert {
                     info.AniListID = AnilistId
                     info.ImageString = ImageString
                     info.pictureUrl = cleanData["coverImage"] as! String
+    
                     info.Description = cleanData["Description"] as! String
                     info.Similarity = Similarity * 100
                     info.Id = UUID().uuidString
@@ -75,33 +76,33 @@ class TraceMoeAPI: ObservableObject, showingAlert {
 extension TraceMoeAPI {
     
     func Disection(TheData: QueryQuery.Data) -> [(String):(Any)] {
-        
+
         var Poggers = [(String):(Any)]()
         //Loping through and removing the annoying <b> and what not
         var Description = (TheData.media?.description)! as String
         let removale = ["<br> <br>", "<br>", "<b/>", "<br><br>","</b>","<i>","</i>","<b>"]
-        
+
         
         for word in removale{
             Description = Description.replacingOccurrences(of: word, with: "")
         }
-        
+
         let StartDate = TheData.media?.startDate
         let Populatiry = TheData.media?.popularity
         let SiteUrl = TheData.media?.siteUrl
         let title = TheData.media?.title?.english
-        let coverImage = TheData.media?.coverImage?.medium
+        let coverImage = TheData.media?.coverImage?.extraLarge
         let malId = TheData.media?.idMal
-        
+
         Poggers["Description"] = Description
         Poggers["Popularity"] = Populatiry
         Poggers["SiteURL"] = SiteUrl
         Poggers["title"] = title
         Poggers["coverImage"] = coverImage
         Poggers["malId"] = malId
-        
+
         return Poggers
-        
+
     }
     
     func convertBase64ToImage(_ str: String) -> UIImage {
